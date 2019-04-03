@@ -1,7 +1,14 @@
 #!/bin/sh
+
+if [ "$1" == "" ] ; then
+    echo "ERROR! Missing application id."
+    echo "Usage: ./areWeThereYet.sh <APPLICATION_ID>\n"
+    exit 0
+fi
+
 {
-  echo "Calling website status..."
-  ANSWER=`curl -X POST -F 'appReceiptNum=<APPLICATION_ID>' -F 'initCaseSearch=CHECK STATUS' https://egov.uscis.gov/casestatus/mycasestatus.do`
+  echo "Calling website status with application id: $1..."
+  ANSWER=`curl -X POST -F 'appReceiptNum='$1 -F 'initCaseSearch=CHECK STATUS' https://egov.uscis.gov/casestatus/mycasestatus.do`
   echo "Done."
 } 2> /dev/null
 
