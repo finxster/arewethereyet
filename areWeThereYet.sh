@@ -8,7 +8,9 @@
 echo "Parsing response..."
 {
   if echo "$ANSWER" | grep -E "(Request For Evidence Was Received</h1>)"; then
-    STATUS="Status: still the same";
+    STATUS="Status: still the same (Request For Evidence Was Received)";
+  elif echo "$ANSWER" | grep -E "(Request for Additional Evidence Was Mailed</h1>)"; then
+    STATUS="Status: still the same (Request for Additional Evidence Was Mailed)";
   else
     STATUS="STATUS CHANGED!!!!!!!!!!";
   fi
