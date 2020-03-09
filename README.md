@@ -15,6 +15,7 @@ Execute the script sending your application id and the expected status as parame
 ```
 1 - Request For Evidence Was Received
 2 - Request for Additional Evidence Was Mailed 
+3 - Case Was Received and A Receipt Notice Was Emailed
 ```
 ## Example
 ```
