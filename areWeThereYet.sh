@@ -89,6 +89,7 @@ case $expected_status in
   ;;
 4)
   expected_status=$CASE_IS_BEING_ACTIVELY_REVIEWED_BY_USCIS
+  ;;
 *)
   echo "ERROR! Unexpected status."
   showHelp
