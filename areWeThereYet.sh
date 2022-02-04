@@ -28,6 +28,7 @@ showHelp() {
         1              Request For Evidence Was Received
         2              Request for Additional Evidence Was Mailed
         3              Case Was Received and A Receipt Notice Was Emailed
+        4              Case Is Being Actively Reviewed By USCIS
         \n
   example: ./areWeThereYet.sh -a WAC1234567890 -s 1
   \n"
@@ -38,6 +39,7 @@ showHelp() {
 REQUEST_FOR_EVIDENCE_WAS_RECEIVED="Request For Evidence Was Received"
 REQUEST_FOR_ADDITIONAL_EVIDENCE_WAS_MAILED="Request for Additional Evidence Was Mailed"
 CASE_WAS_RECEIVED_AND_A_RECEIPT_NOTICE_WAS_EMAILED="Case Was Received and A Receipt Notice Was Emailed"
+CASE_IS_BEING_ACTIVELY_REVIEWED_BY_USCIS="Case Is Being Actively Reviewed By USCIS"
 
 # A POSIX variable
 OPTIND=1         # Reset in case getopts has been used previously in the shell.
@@ -85,6 +87,8 @@ case $expected_status in
 3)
   expected_status=$CASE_WAS_RECEIVED_AND_A_RECEIPT_NOTICE_WAS_EMAILED
   ;;
+4)
+  expected_status=$CASE_IS_BEING_ACTIVELY_REVIEWED_BY_USCIS
 *)
   echo "ERROR! Unexpected status."
   showHelp
