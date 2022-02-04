@@ -16,6 +16,7 @@ Execute the script sending your application id and the expected status as parame
 1 - Request For Evidence Was Received
 2 - Request for Additional Evidence Was Mailed 
 3 - Case Was Received and A Receipt Notice Was Emailed
+4 - Case Is Being Actively Reviewed By USCIS
 ```
 ## Example
 ```
@@ -26,4 +27,4 @@ Any doubts/suggestions, please fill a PR, Issue or send me and email.
 
 # limitations
 
-For now, the script just checks for two status: `Request For Evidence Was Received` and `Request for Additional Evidence Was Mailed`. Any status besides these, it will return a `Status changed` message. In the future, this should be improved. 
+For now, the script just checks for a couple status. Please check status list. Any status besides these, it will return a `Status changed` message. In the future, this should be improved. 
