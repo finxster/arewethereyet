@@ -3,13 +3,13 @@
 callSite() {
   {
     echo "Calling website status with application id: $1..."
-    ANSWER=`curl -X POST -F 'appReceiptNum='$1 -F 'initCaseSearch=CHECK STATUS' https://egov.uscis.gov/casestatus/mycasestatus.do`
+    ANSWER=`curl -X GET https://egov.uscis.gov/csol-api/case-statuses/$1`
     echo "Done."
   } 2> /dev/null
 
   echo "Parsing response (expected response: $2)..."
   {
-    if echo "$ANSWER" | grep -E "($2</h1>)"; then
+    if echo "$ANSWER" | grep -E "$2" -q; then
       STATUS="Status: still the same ("$2")";
     else
       STATUS="STATUS CHANGED!!!!!!!!!!";
